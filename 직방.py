@@ -8,6 +8,8 @@ SUBWAY_LIST_URL="https://apis.zigbang.com/property/biglab/subway/all?"
 ROOM_LIST_URL="https://apis.zigbang.com/v3/items/ad/{subway_id}?subway_id={subway_id}&radius=1&sales_type=&deposit_s=0&rent_s=0&floor=1~%7Crooftop%7Csemibase&domain=zigbang&detail=false"
 ROOM_INFO_URL="https://apis.zigbang.com/v2/items/{room_id}"
  
+지하철역리스트 = ['중곡역','군자역','어린이대공원역','건대입구역','뚝섬유원지역','구의역','강변역','광나루역','아차산역']
+
 # 지하철 정보 수집
 def getSubwayId( subway_name ):
     REQUEST_URL = SUBWAY_LIST_URL
@@ -106,11 +108,9 @@ def 크롤링(subway_name):
         return
                  
 
-광진구지하철역 = ['중곡역','군자역','어린이대공원역','건대입구역','뚝섬유원지역','구의역','강변역','광나루역','아차산역']
 
-
-
-for subway in 광진구지하철역:
+# 크롤링 실행
+for subway in 지하철역리스트:
     크롤링(subway)
     file_name = '{subway_name}.txt'
     f = open(file_name.format(subway_name = subway),'w', encoding="UTF-8")
