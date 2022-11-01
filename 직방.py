@@ -164,7 +164,7 @@ def parseRoomInfo( room_info, find_text=None ):
     #         return parsed_data
     #     return None
     return parsed_data
- 
+
 방_리스트 = [] 
 # 지하철 정보 수집
 def 크롤링(subway_name):    
